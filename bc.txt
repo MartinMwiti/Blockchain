@@ -1,9 +1,0 @@
-# STEPS:
-## Git Bash
-1. pip install web3
-2. python
-3. from web3 import Web3
-4. infura_url = <""> #PROJECT ENDPOINT URL
-5. web3 = Web3(Web3.HTTPProvider(infura_url))
-6. web3.isConnected() #should return <true>
-7. web3.eth.blockNumber #read/get the latest block number on etherium blochchain

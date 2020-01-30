@@ -1,5 +1,4 @@
-import os
-import json
+import os,json
 from web3 import Web3
 
 
@@ -22,9 +21,10 @@ contract = web3.eth.contract(address=address, abi =abi)
 print(contract)
 
 totalsupply = contract.functions.totalSupply().call()
-# print(totalsupply)
 print(web3.fromWei(totalsupply, 'ether'))
+
 print(contract.functions.name().call())
+
 print(contract.functions.symbol().call())
 # balance = contract.functions.balanceOf('0x2551d2357c8da54b7d330917e0e769d33f1f5b93').call()
 # print(web3.fromWei(balance, 'ether'))
