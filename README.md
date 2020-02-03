@@ -6,6 +6,8 @@ Building a blockchain using python.
 
 * ### Dependencies
   Dependencies: [Link](https://github.com/MartinMwiti/Blockchain/blob/master/requirements.txt)
+  
+  ```pip install requirements.txt```
 
 * ### Other requirement
   Postman: [Download link](https://www.getpostman.com/downloads/)
