@@ -12,6 +12,7 @@ class Blockchain:
     def __init__(self):
         self.current_transactions = []
         self.chain = []
+        # set(): no matter how many times we add a specific node, it appears exactly once.
         self.nodes = set()
 
         # Create the genesis block
@@ -134,7 +135,7 @@ class Blockchain:
 
     @property
     def last_block(self):
-        return self.chain[-1]
+        return self.chain[-1] 
 
     @staticmethod
     def hash(block):
@@ -201,7 +202,7 @@ def mine():
     # The sender is "0" to signify that this node has mined a new coin.
     blockchain.new_transaction(
         sender="0",
-        recipient=node_identifier,
+        recipient=node_identifier,  # address of our node
         amount=1,
     )
 
@@ -226,13 +227,14 @@ def new_transaction():
     # Check that the required fields are in the POST'ed data
     required = ['sender', 'recipient', 'amount']
     if not all(k in values for k in required):
-        return 'Missing values', 400
+        return 'Missing values', 400 # 400 Bad request
 
     # Create a new Transaction
     index = blockchain.new_transaction(
         values['sender'], values['recipient'], values['amount'])
 
     response = {'message': f'Transaction will be added to Block {index}'}
+    # An HTTP 201 status code indicates that a request to the Flask application led to the creation of a resource
     return jsonify(response), 201
 
 
@@ -242,7 +244,7 @@ def full_chain():
         'chain': blockchain.chain,
         'length': len(blockchain.chain),
     }
-    return jsonify(response), 200
+    return jsonify(response), 200 # 200 OK
 
 
 @app.route('/nodes/register', methods=['POST'])
