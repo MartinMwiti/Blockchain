@@ -222,6 +222,7 @@ def mine():
 
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
+    # getting the data from a separate json file.
     values = request.get_json()
 
     # Check that the required fields are in the POST'ed data
