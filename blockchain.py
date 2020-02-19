@@ -222,7 +222,7 @@ def mine():
 
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
-    # getting the data from a separate json file.
+    # getting the data from a separate json file- from the new_transaction function.
     values = request.get_json()
 
     # Check that the required fields are in the POST'ed data
@@ -277,7 +277,7 @@ def consensus():
         }
     else:
         response = {
-            'message': 'Our chain is authoritative',
+            'message': 'All good, the chain is the longest one.',
             'chain': blockchain.chain
         }
 
