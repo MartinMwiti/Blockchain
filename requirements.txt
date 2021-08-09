@@ -33,7 +33,7 @@ pycodestyle==2.5.0
 pycryptodome==3.9.4
 pypiwin32==223
 pyrsistent==0.15.7
-pywin32==227
+pywin32==301
 requests==2.18.4
 rlp==1.2.0
 six==1.14.0
